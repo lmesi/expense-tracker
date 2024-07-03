@@ -22,6 +22,6 @@ public class User {
     private String email;
     private String roles;
 
-    /*@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Expense> expenses;*/
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Expense> expenses;
 }

@@ -1,7 +1,7 @@
 package com.example.expense_tracker.controller;
 
+import com.example.expense_tracker.dto.UserDto;
 import com.example.expense_tracker.model.AuthRequest;
-import com.example.expense_tracker.model.User;
 import com.example.expense_tracker.service.JwtService;
 import com.example.expense_tracker.service.UserService;
 import org.springframework.security.core.Authentication;
@@ -31,8 +31,8 @@ public class UserController {
     }
 
     @PostMapping("/registerUser")
-    public String registerUser(@RequestBody User user) {
-        return userService.registerUser(user);
+    public String registerUser(@RequestBody UserDto userDto) {
+        return userService.registerUser(userDto);
     }
 
     @GetMapping("/user/userProfile")

@@ -15,13 +15,13 @@ public class Expense {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private Double amount;
+    private double amount;
     private String category;
     private String description;
     private LocalDate date;
 
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;*/
+    private User user;
 
 }
