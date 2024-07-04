@@ -1,5 +1,6 @@
 package com.example.expense_tracker.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,12 +17,16 @@ public class Expense {
     private long id;
 
     private double amount;
-    private String category;
+
+    @Enumerated(EnumType.STRING)
+    private ExpenseCategory category;
+
     private String description;
     private LocalDate date;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
 
 }
